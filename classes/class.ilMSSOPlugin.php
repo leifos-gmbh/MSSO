@@ -252,7 +252,7 @@ class ilMSSOPlugin extends ilAuthPlugin implements ilAuthDefinition
 	 */
 	public function getProvider($credentials, $a_auth_id)
 	{
-		return new ilAuthProviderMSSO();
+		return new ilAuthProviderMSSO($credentials);
 	}
 }
 ?>
