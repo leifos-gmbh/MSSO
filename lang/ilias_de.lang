@@ -1,0 +1,18 @@
+conf_add_title#:#Neuen Authentifizierungs-Server anlegen
+tab_settings#:#Server
+conf_uri#:#URI
+conf_add#:#Neuen Server konfigurieren
+conf_edit_title#:#Server-Konfiguration bearbeiten
+conf_activation#:#Authentifizierung aktivieren
+conf_sync_login_type#:#Benutzersynchronisierung
+conf_sync_login#:#Automatische Synchronisierung von ILIAS-Benutzerkonten
+conf_sync_login_info#:#Wenn aktiviert, werden ILIAS-Benutzerkonten automatisch generiert, wenn die Authentifizierung erfolgreich war und noch kein ILIAS-Benutzerkonto existiert.
+conf_role_selection#:#Auswahl der Standard-Rolle
+servers_table#:#Server-Konfigurationen
+servers_table_uri#:#URI
+servers_table_active#:#Active
+conf_add_roles#:#Zusätzliche Rollen
+conf_add_roles_info#:#Rollen:
+conf_user_folder#:#Benutzerzuordnung
+conf_global_user#:#Global Benutzer
+conf_local_user_info#:#Lokaler Benutzer in Kategorie: "%1s"

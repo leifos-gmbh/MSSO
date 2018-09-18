@@ -1,0 +1,18 @@
+conf_add_title#:#Add new Authentication Server
+tab_settings#:#Server
+conf_uri#:#URI
+conf_add#:#Configure Authentication Server
+conf_edit_title#:#Edit Server Configuration
+conf_activation#:#Enable Authentication
+conf_sync_login_type#:#User Synchronisation
+conf_sync_login#:#Automatic User Synchronisation
+conf_sync_login_info#:#If enabled, user are created automatically if the authentication was successful and no ILIAS user account exists.
+conf_role_selection#:#Standard Role
+servers_table#:#Server Configurations
+servers_table_uri#:#URI
+servers_table_active#:#Active
+conf_add_roles#:#Additional Roles
+conf_add_roles_info#:#Roles:
+conf_user_folder#:#User Assignment to Category
+conf_global_user#:#Global User
+conf_local_user_info#:#Local User in Category: "%1s"
