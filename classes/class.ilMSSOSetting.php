@@ -7,10 +7,10 @@
  *
  * @author Stefan Meyer <smeyer.ilias@gmx.de>
  */
-class ilMSSSOSetting 
+class ilMSSOSetting
 {
-	const MSSSO_AUTH_USER = 'HTTP_X_TRUSTED_REMOTE_USER';
-	const MSSSO_AUTH_ATTIBUTES = 'HTTP_X_TRUSTED_REMOTE_ATTR';
+	const MSSO_AUTH_USER = 'HTTP_X_TRUSTED_REMOTE_USER';
+	const MSSO_AUTH_ATTIBUTES = 'HTTP_X_TRUSTED_REMOTE_ATTR';
 	
 	const DB_TABLE = 'auth_authhk_mssso_s';
 	
@@ -32,7 +32,7 @@ class ilMSSSOSetting
 	/**
 	 * Get instance by server id
 	 * @param type $a_sid
-	 * @return ilMSSSOSetting
+	 * @return ilMSSOSetting
 	 */
 	public static function getInstance()
 	{

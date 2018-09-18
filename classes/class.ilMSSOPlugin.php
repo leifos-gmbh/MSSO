@@ -33,14 +33,14 @@ include_once './Services/Authentication/interfaces/interface.ilAuthDefinition.ph
 * 
 *
 */
-class ilMSSSOPlugin extends ilAuthPlugin implements ilAuthDefinition
+class ilMSSOPlugin extends ilAuthPlugin implements ilAuthDefinition
 {
 	private static $instance = null;
 
 	const CTYPE = 'Services';
 	const CNAME = 'Authentication';
 	const SLOT_ID = 'authhk';
-	const PNAME = 'MSSSO';
+	const PNAME = 'MSSO';
 	
 	const AUTH_ID_BASE = 1300;
 	
@@ -94,7 +94,7 @@ class ilMSSSOPlugin extends ilAuthPlugin implements ilAuthDefinition
 		if($auth_ids === null)
 		{
 			$this->includeClass('class.ilMSSOSetting.php');
-			$setting = ilMSSSOSetting::getInstance();
+			$setting = ilMSSOSetting::getInstance();
 			if($setting->isActive())
 			{
 				$auth_ids[] = (self::AUTH_ID_BASE + (int) $setting->getServerId());
@@ -138,7 +138,7 @@ class ilMSSSOPlugin extends ilAuthPlugin implements ilAuthDefinition
 		if($a_auth_id == (self::AUTH_ID_BASE + $sid))
 		{
 			$this->includeClass('class.ilAuthContainerMSSO.php');
-			$container = new ilAuthContainerMSSSO();
+			$container = new ilAuthContainerMSSO();
 			return $container;
 		}
 		return null;
@@ -189,7 +189,7 @@ class ilMSSSOPlugin extends ilAuthPlugin implements ilAuthDefinition
 		$sid = $this->extractServerId($a_auth_id);
 		$this->includeClass('class.ilMSSOSetting.php');
 		return array(
-			$a_auth_id => array('txt' => ilMSSSOSetting::getInstance()->getTitle())
+			$a_auth_id => array('txt' => ilMSSOSetting::getInstance()->getTitle())
 		);
 	}
 	
@@ -213,7 +213,7 @@ class ilMSSSOPlugin extends ilAuthPlugin implements ilAuthDefinition
 	{
 		$sid = $this->extractServerId($a_auth_id);
 		$this->includeClass('class.ilMSSOSetting.php');
-		$setting = ilMSSSOSetting::getInstance();
+		$setting = ilMSSOSetting::getInstance();
 		if($setting->isActive())
 		{
 			return true;

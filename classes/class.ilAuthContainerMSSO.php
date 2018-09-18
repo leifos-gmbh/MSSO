@@ -9,7 +9,7 @@ include_once 'Auth/Container.php';
  *
  * @author Stefan Meyer <smeyer.ilias@gmx.de>
  */
-class ilAuthContainerMSSSO extends Auth_Container
+class ilAuthContainerMSSO extends Auth_Container
 {
 	private static $force_creation = false;
 
@@ -28,7 +28,7 @@ class ilAuthContainerMSSSO extends Auth_Container
 	 */
 	public function __construct()
 	{
-		$this->server = ilMSSSOSetting::getInstance();
+		$this->server = ilMSSOSetting::getInstance();
 		
 		$GLOBALS['ilLog']->write(__METHOD__.': MSSO initialized');
 		
@@ -70,7 +70,7 @@ class ilAuthContainerMSSSO extends Auth_Container
 	
 	/**
 	 * Get server configuration
-	 * @return ilMSSSOSetting
+	 * @return ilMSSOSetting
 	 */
 	public function getServer()
 	{
@@ -98,7 +98,7 @@ class ilAuthContainerMSSSO extends Auth_Container
 			return true;
 		}
 		
-		#$username = trim($_SERVER[ilMSSSOSetting::MSSSO_AUTH_USER]);
+		#$username = trim($_SERVER[ilMSSOSetting::MSSO_AUTH_USER]);
 		$username = trim($this->getRawUserName());
 		
 		$GLOBALS['ilLog']->write(__METHOD__.': User data is: '.print_r($this->getRawUserData(),true));
@@ -130,7 +130,7 @@ class ilAuthContainerMSSSO extends Auth_Container
 		);
 		
 		
-		$mig = new ilMSSSOAuthAttributeToUser($this->getServer());
+		$mig = new ilMSSOAuthAttributeToUser($this->getServer());
 
 		if(!$user_data['ilInternalAccount'])
 		{
@@ -140,7 +140,7 @@ class ilAuthContainerMSSSO extends Auth_Container
 				$_SESSION['tmp_auth_mode'] = 'mssso_'.$this->getServer()->getServerId();
 				$_SESSION['tmp_usr_name'] = $this->getSSOUserName();
 				$_SESSION['tmp_usr_pass'] = 'undefined';
-				#$_SESSION['tmp_usr_data'] = $_SERVER[ilMSSSOSetting::MSSSO_AUTH_ATTIBUTES];
+				#$_SESSION['tmp_usr_data'] = $_SERVER[ilMSSOSetting::MSSO_AUTH_ATTIBUTES];
 				$_SESSION['tmp_usr_data'] = $this->getRawUserData();
 				$_SESSION['tmp_external_account'] = $this->user;
 				
@@ -174,11 +174,11 @@ class ilAuthContainerMSSSO extends Auth_Container
 	
 	/**
 	 * Parse user data
-	 * @param ilMSSSOAuthAttributeToUser $mig
+	 * @param ilMSSOAuthAttributeToUser $mig
 	 * @param type $a_ext_account
 	 * @param type $a_ud
 	 */
-	protected function parseUserData(ilMSSSOAuthAttributeToUser $mig, $a_ext_account ,$a_ud = '')
+	protected function parseUserData(ilMSSOAuthAttributeToUser $mig, $a_ext_account ,$a_ud = '')
 	{
 		
 		$ud_str = $a_ud ? $a_ud : $this->getRawUserData();
@@ -192,7 +192,7 @@ class ilAuthContainerMSSSO extends Auth_Container
 		
 		$GLOBALS['ilLog']->write(__METHOD__.': Remote attributes '. print_r($remote_attrbs,true));
 		
-		#$ud_str = $a_ud ? $a_ud : $_SERVER[ilMSSSOSetting::MSSSO_AUTH_ATTIBUTES];
+		#$ud_str = $a_ud ? $a_ud : $_SERVER[ilMSSOSetting::MSSO_AUTH_ATTIBUTES];
 		
 		$mig->setEmail($remote_attrbs[0]);
 		

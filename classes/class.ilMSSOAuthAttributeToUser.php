@@ -10,7 +10,7 @@
 * 
 * @ingroup ServicesRadius 
 */
-class ilMSSSOAuthAttributeToUser
+class ilMSSOAuthAttributeToUser
 {
 	
 	private $server;
@@ -26,7 +26,7 @@ class ilMSSSOAuthAttributeToUser
 	 * @access public
 	 * 
 	 */
-	public function __construct(ilMSSSOSetting $server)
+	public function __construct(ilMSSOSetting $server)
 	{
 		global $ilLog;
 		
@@ -172,7 +172,7 @@ class ilMSSSOAuthAttributeToUser
 		
 		$this->writer->xmlEndTag('User');
 		$this->writer->xmlEndTag('Users');
-		$this->log->write('MSSSO Auth: Started creation of user: '.$new_name);
+		$this->log->write('MSSO Auth: Started creation of user: '.$new_name);
 		
 		
 		$GLOBALS['ilLog']->write(__METHOD__.': XML is '. $this->writer->xmlDumpMem());

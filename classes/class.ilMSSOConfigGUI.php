@@ -10,7 +10,7 @@ include_once 'Services/Form/classes/class.ilPropertyFormGUI.php';
  *
  * @author Stefan Meyer <smeyer.ilias@gmx.de>
  */
-class ilMSSSOConfigGUI extends ilPluginConfigGUI
+class ilMSSOConfigGUI extends ilPluginConfigGUI
 {
 	const MODE_ADD_CONFIGURATION = 1;
 	const MODE_EDIT_CONFIGURATION = 2;
@@ -41,7 +41,7 @@ class ilMSSSOConfigGUI extends ilPluginConfigGUI
 
 		$ilTabs->addTab(
 			'overview',
-			ilMSSSOPlugin::getInstance()->txt('tab_settings'),
+			ilMSSOPlugin::getInstance()->txt('tab_settings'),
 			$GLOBALS['ilCtrl']->getLinkTarget($this,'overview')
 		);
 
@@ -215,7 +215,7 @@ class ilMSSSOConfigGUI extends ilPluginConfigGUI
 	protected function initServer()
 	{
 		$this->getPluginObject()->includeClass('class.ilMSSOSetting.php');
-		$this->server = ilMSSSOSetting::getInstance();
+		$this->server = ilMSSOSetting::getInstance();
 	}
 	
 }
