@@ -1,7 +1,7 @@
 <#1>
 <?php
 
-if(!$ilDB->tableExists('auth_authhk_mssso'))
+if(!$ilDB->tableExists('auth_authhk_mssso_s'))
 
 	$fields = array(
 		'sid' => array(
@@ -38,7 +38,7 @@ if(!$ilDB->tableExists('auth_authhk_mssso'))
 <#2>
 <?php
 
-if(!$ilDB->tableExists('auth_authhk_mssso'))
+if(!$ilDB->tableExists('auth_authhk_mssso_s'))
 {
 
 	$fields = array(
