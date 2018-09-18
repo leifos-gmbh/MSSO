@@ -19,7 +19,7 @@ class ilAuthProviderMSSO extends ilAuthProvider implements ilAuthProviderInterfa
 	{
 		global $DIC;
 
-		$this->logger = $DIC->$this->logger()->auth();
+		$this->logger = $DIC->logger()->auth();
 		$this->server = ilMSSOSetting::getInstance();
 
 		parent::__construct($credentials);
