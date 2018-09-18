@@ -59,19 +59,19 @@ class ilAuthProviderMSSO extends ilAuthProvider implements ilAuthProviderInterfa
 	public function doAuthentication(\ilAuthStatus $status)
 	{
 		$this->logger->debug('Auth provider sso called.');
-		$this->getCredentials()->setUsername($this->getRawUserName());
+
 
 		$this->logger->debug('Received user_data: ');
 		$this->logger->dump($this->getRawUserData(),ilLogLevel::DEBUG);
-
-		if(!$this->getCredentials()->getUsername())
+		if(!$this->getRawUserData())
 		{
 			$this->logger->info('No sso request');
 			$status->setStatus(ilAuthStatus::STATUS_AUTHENTICATION_FAILED);
 			$status->setReason('err_wrong_login');
 			return false;
 		}
-
+		// username available
+		$this->getCredentials()->setUsername($this->getRawUserName());
 		$ilias_login = ilObjUser::_checkExternalAuthAccount(
 			'mssso_'.$this->getServer()->getServerId(),
 			$this->getCredentials()->getUsername()
