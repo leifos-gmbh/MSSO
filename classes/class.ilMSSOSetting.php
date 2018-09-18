@@ -43,21 +43,6 @@ class ilMSSOSetting
 		return self::$instances = new self();
 	}
 	
-	public static function lookupTitle()
-	{
-		global $ilDB;
-		
-		$query = 'SELECT title FROM '.self::DB_TABLE.' '.
-				'WHERE sid = '.$ilDB->quote($this->getServerId(),'integer');
-		$res = $ilDB->query($query);
-		while($row = $res->fetchRow(DB_FETCHMODE_OBJECT))
-		{
-			return $row->title;
-		}
-		return '';
-	}
-	
-	
 	public function getServerId()
 	{
 		return $this->server_id;

@@ -26,7 +26,7 @@
 $id = "authmssso";
  
 // code version; must be changed for all code changes
-$version = "5.3.0";
+$version = "5.3.8.1";
  
 // ilias min and max version; must always reflect the versions that should
 // run with the plugin

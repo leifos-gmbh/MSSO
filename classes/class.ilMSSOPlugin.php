@@ -48,7 +48,7 @@ class ilMSSOPlugin extends ilAuthPlugin implements ilAuthDefinition
 	/**
 	 * Get singelton instance
 	 * @global ilPluginAdmin $ilPluginAdmin
-	 * @return ilBibAuthPlugin
+	 * @return ilMSSOPlugin
 	 */
 	public static function getInstance()
 	{
@@ -242,6 +242,17 @@ class ilMSSOPlugin extends ilAuthPlugin implements ilAuthDefinition
 	{
 		$class_file = $this->getClassesDirectory().'/class.'.$a_classname.'.php';
 		@include_once($class_file);
+	}
+
+	/**
+	 * Get auth provider instance
+	 * @param ilAuthCredentials
+	 * @param string $a_auth_id
+	 * @return ilAuthProviderInterface
+	 */
+	public function getProvider($credentials, $a_auth_id)
+	{
+		return new ilAuthProviderMSSO();
 	}
 }
 ?>

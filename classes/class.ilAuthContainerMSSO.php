@@ -87,7 +87,13 @@ class ilAuthContainerMSSO extends Auth_Container
 	 * @param type $username
 	 * @param type $password
 	 * @param type $isChallengeResponse
-	 */
+	 *//**
+ * Created by PhpStorm.
+ * User: stefan
+ * Date: 18.09.18
+ * Time: 11:30
+ */
+
 	public function fetchData($username, $password, $isChallengeResponse = false)
 	{
 		$GLOBALS['ilLog']->write(__METHOD__.': Auth container mssso called');
