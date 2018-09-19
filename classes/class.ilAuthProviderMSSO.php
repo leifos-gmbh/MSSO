@@ -38,7 +38,7 @@ class ilAuthProviderMSSO extends ilAuthProvider implements ilAuthProviderInterfa
 	 */
 	public function getRawUserData()
 	{
-		return base64_decode($_SERVER['HTTP_X_TRUSTED_REMOTE_ATTR']);
+		return $_SERVER['HTTP_X_TRUSTED_REMOTE_ATTR'];
 	}
 
 	/**
@@ -46,7 +46,7 @@ class ilAuthProviderMSSO extends ilAuthProvider implements ilAuthProviderInterfa
 	 */
 	public function getRawUserName()
 	{
-		return base64_decode($_SERVER['HTTP_X_TRUSTED_REMOTE_USER']);
+		return $_SERVER['HTTP_X_TRUSTED_REMOTE_USER'];
 	}
 
 
