@@ -38,7 +38,7 @@ class ilAuthProviderMSSO extends ilAuthProvider implements ilAuthProviderInterfa
 	 */
 	public function getRawUserData()
 	{
-		return base64_decode($_REQUEST['mssso_attrbs']);
+		return base64_decode($_SERVER['HTTP_X_TRUSTED_REMOTE_ATTR']);
 	}
 
 	/**
@@ -46,7 +46,7 @@ class ilAuthProviderMSSO extends ilAuthProvider implements ilAuthProviderInterfa
 	 */
 	public function getRawUserName()
 	{
-		return base64_decode($_REQUEST['mssso_user']);
+		return base64_decode($_SERVER['HTTP_X_TRUSTED_REMOTE_USER']);
 	}
 
 
@@ -130,7 +130,7 @@ class ilAuthProviderMSSO extends ilAuthProvider implements ilAuthProviderInterfa
 			$remote_attrbs[$key] = rawurldecode($val);
 		}
 
-		$this->logger->debug('Remote attibutes: ');
+		$this->logger->debug('Remote attributes: ');
 		$this->logger->dump($remote_attrbs, ilLogLevel::DEBUG);
 
 		#$ud_str = $a_ud ? $a_ud : $_SERVER[ilMSSOSetting::MSSO_AUTH_ATTIBUTES];
