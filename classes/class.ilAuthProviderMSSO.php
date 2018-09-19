@@ -77,6 +77,9 @@ class ilAuthProviderMSSO extends ilAuthProvider implements ilAuthProviderInterfa
 			$this->getCredentials()->getUsername()
 		);
 
+		$this->logger->debug('Username: ' . $this->getCredentials()->getUsername());
+		$this->logger->debug('ILIAS login: ' . $ilias_login .' '. $this->getServer()->getServerId());
+
 		if(
 			!$ilias_login &&
 			$this->getServer()->isSyncEnabled()
