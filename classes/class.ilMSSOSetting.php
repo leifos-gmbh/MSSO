@@ -166,7 +166,7 @@ class ilMSSOSetting
 		$query = 'SELECT * FROM '.self::DB_TABLE.' '.
 				'WHERE sid = '.$ilDB->quote($this->getServerId(),'integer');
 		$res = $ilDB->query($query);
-		while($row = $res->fetchRow(DB_FETCHMODE_OBJECT))
+		while($row = $res->fetchRow(\ilDBConstants::FETCHMODE_OBJECT))
 		{
 			$this->setTitle($row->title);
 			$this->setRole($row->role);
