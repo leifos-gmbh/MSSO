@@ -78,7 +78,7 @@ class ilMSSOPlugin extends ilAuthPlugin implements ilAuthDefinition
 	/**
 	 * Init slot
 	 */
-	protected function slotInit()
+	protected function init()
 	{
 		$this->initAutoLoad();
 	}
