@@ -112,6 +112,12 @@ class ilAuthProviderMSSO extends ilAuthProvider implements ilAuthProviderInterfa
 
 		$status->setStatus(ilAuthStatus::STATUS_AUTHENTICATED);
 		$status->setAuthenticatedUserId(ilObjUser::_lookupId($ilias_login));
+
+		$target = \ilSession::get('unirep_sso_target');
+		if (strlen($target)) {
+		    $_GET['target'] = $target;
+        }
+
 		return true;
 	}
 
