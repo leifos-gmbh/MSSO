@@ -128,21 +128,6 @@ class ilMSSOPlugin extends ilAuthPlugin implements ilAuthDefinition
 		return 'mssso_'.$sid;
 	}
 
-	
-	/**
-	 * Get container
-	 */
-	public function getContainer($a_auth_id)
-	{
-		$sid = $this->extractServerId($a_auth_id);
-		if($a_auth_id == (self::AUTH_ID_BASE + $sid))
-		{
-			$this->includeClass('class.ilAuthContainerMSSO.php');
-			$container = new ilAuthContainerMSSO();
-			return $container;
-		}
-		return null;
-	}
 
 	/**
 	 * 
